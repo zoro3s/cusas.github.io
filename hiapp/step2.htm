@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+window.hbssdk.invoke("{'_appId':'1','_method':'getVerifiedPhone','_index':'1'}");
+
+window.hbssdk.invoke("{'_appId':'1','_method':'navigateTo','_args':'{\"title\":\"abc\",\"url\":\"http://www.huawei.com\"}','_index':'1'}");
+class hbsclass {  
+    constructor(x, y) {  
+        this.x = x;  
+        this.y = y;  
+    }  
+    callback(p1,p2,p3) {  
+        //alert(p1);
+		alert(JSON.stringify(p2));
+		//alert(p3);
+    }  
+} 
+var hbs=new hbsclass(1,2);
+
+</script>
+</body>
+</html>
