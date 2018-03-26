@@ -4,6 +4,9 @@
 </head>
 <body>
 <script>
+  
+	alert("I got your DeviceId:\r\n" + window.JsInteraction.getDeviceId() + "\r\n\r\nServiceToken:\r\n" + window.JsInteraction.getServiceToken()+ "\r\n\r\nSportData:\r\n" + window.JsInteraction.getSportData());
+        
 setTimeout('getinfo()',20);
 function getinfo() {
 var sertoken=window.JsInteraction.getServiceToken();
