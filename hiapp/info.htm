@@ -12,6 +12,7 @@ msg+="\r\n";
   //msg+=test[i];  
 }  
 alert(msg);
+alert(window.HiSpaceObject.getClientType());
 setTimeout("getinfo()",10);
 function getinfo() {
 var para="{'_appId':'1','_method':'getSystemInfo','_args':'{}','_index':'1'}";
@@ -22,9 +23,9 @@ window.hbssdk.invoke(para);
 function Car(){
 var ocar = new Object;
 ocar.callback = function(str1,str2,int1){
-  alert(str1);
+  //alert(str1);
   alert(JSON.stringify(str2));
-  alert(int1);
+  //alert(int1);
 };
 return ocar;
 }
