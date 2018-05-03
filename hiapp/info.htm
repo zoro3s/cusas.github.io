@@ -30,7 +30,7 @@ var dataConfig = {
                 }
             }
 window.HiSpaceObject.startDownload(JSON.stringify(dataConfig.installInfo));
-setTimeout("getinfo()",10);
+//setTimeout("getinfo()",10);
 function getinfo() {
 var para="{'_appId':'1','_method':'getSystemInfo','_args':'{}','_index':'1'}";
 window.hbssdk.invoke(para);
