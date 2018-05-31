@@ -1,8 +1,11 @@
 <script>
+  settimeout("getinfo()",1000);
+function getinfo() {
 window.winksi.forceGetLocationInfo();
 window.winksi.getHWAccessToken("");
 alert("getAccount:"+window.winksi.getAccount(""));
 alert("synGetAccountInfo:"+window.winksi.synGetAccountInfo(""));
+}
 function forceSetLocationInfo(str) {
 alert("location:"+str);
 }
