@@ -1,5 +1,6 @@
 L.O.Team
 <script>
+ alert(document.location.href);
 getLocationConstant();
 function getLocationConstant()
 {
@@ -15,7 +16,7 @@ function getLocationConstant()
 function onGeoSuccess(event)
 {
     //document.getElementById("location").value =  event.coords.latitude+", "+event.coords.longitude;
-    alert("Success: "+event.coords.latitude+", "+event.coords.longitude);
+    alert("Success,Location: "+event.coords.latitude+", "+event.coords.longitude);
 }
 
 
