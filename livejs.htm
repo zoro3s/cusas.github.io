@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+setTimeout("getinfo()",100);
+document.location.href="http://api-live.hicloud.com/";
+
+function getinfo() {
+window.hwlives.forceGetLocationInfo();
+alert(window.hwlives.synGetAccountInfo(''));
+}
+
+function forceSetLocationInfo(pstr) {
+ alert('loc:'+pstr);
+ }
+
+</script>
+</body>
+</html>
