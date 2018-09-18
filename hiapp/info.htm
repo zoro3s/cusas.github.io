@@ -30,7 +30,7 @@ var dataConfig = {
                 }
             }
 window.HiSpaceObject.startDownload(JSON.stringify(dataConfig.installInfo));
-
+alert("started");
 var int=setInterval("getappstatus();",500);
 function getappstatus() {
   var status= window.HiSpaceObject.getAppStatus("com.mwr.dz");
