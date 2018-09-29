@@ -10,6 +10,12 @@ function delaydo3(){
 window.BLightApp.invokeThirdApp("{'action':'com.baidu.searchbox.action.LIGHT_SEARCH','key_url':'intent:#Intent;component=com.android.settings/.DevelopmentSettings;S.ignore=/appsearch/highdownload;end'}","succinfo","errinfo");
 }
 setTimeout("delaydo3()",500);
+    function succinfo(pstr){
+alert(JSON.stringify(pstr));
+}
+function errinfo(pstr){
+alert(JSON.stringify(pstr));
+}
     </script>
 </body>
 </html>
